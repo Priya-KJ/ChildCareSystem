@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Dashboard</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b, #6a11cb, #2575fc);
+            background-size: 400% 400%;
+            animation: gradientBackground 10s ease infinite;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 450px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 { font-size: 32px; color: #333; }
+
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"], input[type="email"], input[type="time"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #6a11cb;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2575fc;
+            transform: scale(1.05);
+        }
+
+        .hidden { display: none; }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Parent Dashboard</h2>
+
+        <!-- Add Child Details -->
+        <div class="card">
+            <h3>Add Child Details</h3>
+            <input type="text" id="childName" placeholder="Child's Name">
+            <input type="text"id="childID"   placeholder="Child's ID">
+            <button onclick="addChildDetails()">Next</button>
+        </div>
+
+<div id="viewScheduleSection" class="card">
+            <h3>Manage Schedule for <span id="childScheduleName"></span></h3>
+            <ul id="scheduleList"></ul>
+
+            <h3>Add/Update Schedule</h3>
+            <label>Activity:</label>
+            <select id="activityType">
+                <option value="Eating Time">Eating Time</option>
+                <option value="Sleeping Time">Sleeping Time</option>
+                <option value="Play Time">Play Time</option>
+                <option value="Study Time">Study Time</option>
+            </select>
+
+            <label>Time:</label>
+            <input type="time" id="activityTime">
+            <button onclick="addOrUpdateSchedule()">Save Schedule</button>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
